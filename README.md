@@ -1,10 +1,12 @@
-# Paddy Disease Classification
+# Paddy Rice Disease Classification
 
-A deep learning-based classification model for detecting and identifying paddy rice leaf diseases using CNNs and TensorFlow.
+This repository contains a deep learning model for classifying paddy rice diseases using TensorFlow and Keras. The model is trained on the **Paddy Doctor** dataset, which consists of images of rice plants affected by various diseases.
 
 ## Dataset
+The dataset used for this project can be found on Kaggle:
+[Paddy Doctor Dataset](https://www.kaggle.com/datasets/imbikramsaha/paddy-doctor)
 
-The dataset consists of **10 classes** of paddy leaf diseases:
+It consists of 10 different classes of rice diseases:
 - Bacterial Leaf Blight
 - Bacterial Leaf Streak
 - Bacterial Panicle Blight
@@ -13,71 +15,51 @@ The dataset consists of **10 classes** of paddy leaf diseases:
 - Dead Heart
 - Downy Mildew
 - Hispa
-- Normal (Healthy Leaves)
+- Normal (Healthy)
 - Tungro
 
-Total Images: **10,407**  
-Training Set: **8,326 images**  
-Validation Set: **2,081 images**
-
 ## Model Architecture
-
-The model is built using a **Convolutional Neural Network (CNN)** with the following layers:
-- Rescaling layer (Normalization)
-- Convolutional layers with ReLU activation
-- MaxPooling layers
+The model is a Convolutional Neural Network (CNN) built with TensorFlow and Keras. The architecture includes:
+- Image rescaling
+- Four convolutional layers with ReLU activation
+- Max pooling layers
 - Flatten layer
-- Dropout layer
-- Fully connected Dense layers with Softmax activation
+- Dropout layer (to prevent overfitting)
+- Dense layers with softmax activation for classification
 
-## Installation & Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/paddy-disease-classification.git
-   cd paddy-disease-classification
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the model training script:
-   ```bash
-   python train.py
-   ```
-
-## Training & Evaluation
-
+## Training
+The model was trained with:
 - **Optimizer:** Adam
 - **Loss Function:** Sparse Categorical Crossentropy
 - **Metrics:** Accuracy
-- **Early Stopping:** Patience of 30 epochs
-
-### Performance
-- The model was trained for **100 epochs** with early stopping.
-- Training & validation accuracy and loss were plotted to visualize performance.
+- **Epochs:** 100 (with early stopping to prevent overfitting)
 
 ## Results
+During training, the model's performance was monitored using accuracy and loss. The validation accuracy fluctuated, and further improvements are needed to enhance performance.
 
-| Metric | Training | Validation |
-|--------|----------|------------|
-| Accuracy | ~42% | ~30% |
-| Loss | High | Very High |
-
-**Note:** The model is experiencing high loss values and needs hyperparameter tuning.
+## Usage
+To use this repository:
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/yourusername/paddy-rice-disease-classification.git
+   ```
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the training script:
+   ```sh
+   python train.py
+   ```
 
 ## Future Improvements
+- Fine-tuning the model with data augmentation
+- Experimenting with different architectures (e.g., Transfer Learning)
+- Hyperparameter tuning
 
-- Data augmentation to improve generalization
-- Hyperparameter tuning (learning rate, dropout, number of filters, etc.)
-- Using a pre-trained model (Transfer Learning)
-- Increasing dataset size for better learning
+## Contributors
+Muhammad Fakhar ul Hasnain
 
-## Contributing
-
-Contributions are welcome! Feel free to **fork** this repository and submit a **pull request**.
-
-
-
-**Author:** Muhammad Fakhar ul Hasnain
+---
+Feel free to contribute and improve this project!
 
